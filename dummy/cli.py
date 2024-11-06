@@ -55,7 +55,8 @@ def make_jpeg(file_path, text):
         font_path = 'C:/Windows/Fonts/arial.ttf'
     else:
         font_path = 'Arial.ttf'
-    arial = ImageFont.truetype(font_path, 30)
+    #arial = ImageFont.truetype(font_path, 30)
+    arial = ImageFont.load_default()
     draw.text((10, 10), text, fill=(0, 0, 0), font=arial) # Black
     image.save(file_path, format='jpeg')
     return True
@@ -71,7 +72,8 @@ def make_png(file_path, text, byte_size):
         font_path = 'C:/Windows/Fonts/arial.ttf'
     else:
         font_path = 'Arial.ttf'
-    arial = ImageFont.truetype(font_path, 30)
+    #arial = ImageFont.truetype(font_path, 30)
+    arial = ImageFont.load_default()
     draw.text((10, 10), text, fill=(0, 0, 0), font=arial) # Black
     output = io.BytesIO()
     image.save(output, format='png')
